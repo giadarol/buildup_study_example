@@ -1,0 +1,10 @@
+
+universe = vanilla
+executable = simulations/$(dirname)/job.job 
+arguments = ""
+output = simulations/$(dirname)/htcondor.out
+error = simulations/$(dirname)/htcondor.err
+log = simulations/$(dirname)/htcondor.log
+transfer_output_files = ""
++JobFlavour = testmatch
+queue dirname from list_sim_folders.txt

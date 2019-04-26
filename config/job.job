@@ -1,0 +1,29 @@
+#!/bin/bash
+
+WORKFOLDER=/afs/cern.ch/work/g/giadarol/afs_phaseout_tests/pyeclout_test/testfolder_fordev
+
+PYECLOUDPATH=$WORKFOLDER
+CURRDIR=/afs/cern.ch/work/g/giadarol/afs_phaseout_tests/pyeclout_test/testfolder_fordev/buildup_study/simulations/LHC_ArcDipReal_450GeV_sey1.90_1.1e11ppb_bl_1.00ns
+export CURRDIR
+
+source $WORKFOLDER/miniconda2/bin/activate
+which python
+
+PYTHONPATH=$PYECLOUDPATH
+export PYTHONPATH
+echo $PYTHONPATH
+
+
+# Copy input and executable
+cp ${PYECLOUDPATH}/PyECLOUD/main.py .
+
+cp ${CURRDIR}/*.input .
+cp ${CURRDIR}/*.beam .
+cp ${CURRDIR}/*.mat .
+
+
+#execute beam generation
+python main.py
+
+#save result
+cp Pyecltest.mat ${CURRDIR}

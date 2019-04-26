@@ -1,0 +1,18 @@
+#!/bin/bash
+
+PYECLOUDPATH=/afs/cern.ch/work/e/ecldcode/sim_workspace_pyhdtl/pyecloud
+PYHEADTAILPATH=/afs/cern.ch/work/e/ecldcode/sim_workspace_pyhdtl/PyHEADTAIL
+
+CURRDIR=/home/giadarol/Desktop/setup_gradient_scan/test_study_pyhdtl/simulations/edens10.0e11
+export CURRDIR
+
+source /afs/cern.ch/work/k/kli/public/venv_py27_slc6/bin/activate
+which python
+
+PYTHONPATH=$PYECLOUDPATH:$PYHEADTAILPATH
+export PYTHONPATH
+echo $PYTHONPATH
+
+cd $CURRDIR
+
+python 000_run_sim.py	

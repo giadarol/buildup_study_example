@@ -1,0 +1,12 @@
+How to use:
+import create_pyecloud_input
+
+- call get_b_multip to obtain the B_multip and B_skew input parameters for PyECLOUD.
+	B per eV or B skew per eV have to be specified as keyword arguments B_eV, B_skew_eV
+	Alternatively, k or k_skew can be specified as keyword arguments.
+
+- call get_k_pe_st_and_r to obtain the k_pe_st and refl_frac input parameters for PyECLOUD
+	R_i has to be specified for the reflectivity on impact
+	Y_i is the electron yield per absorbed photon on impact
+	Y_r is the electron yield per absorbed photon after initial reflection
+
